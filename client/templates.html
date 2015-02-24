@@ -1,0 +1,31 @@
+<!-- <template name="layout"> -->
+<head>
+	<title>Lamp factory</title>
+</head>
+<body>
+	{{> lampManager }}
+</body>
+<!-- </template> -->
+
+<template name="lampManager">
+
+	<p>
+		This is a standalone lamp component:
+	</p>
+	
+	{{> lamp }}
+	
+	<button class="js-create-lamp">create</button>
+
+	<p>
+		These are the attached lamps:
+	</p>
+	<div>
+		{{#each lamps }}
+		<div style="float:left;">
+			{{> lamp ee=ge status=this.status lid=this._id}}
+		</div>
+		{{/each}}
+	</div>
+
+</template>
